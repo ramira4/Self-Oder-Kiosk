@@ -35,7 +35,7 @@ export default function AdminScreen(props) {
 
   useEffect(() => {
     listOrders(dispatch);
-  }, []);
+  }, [dispatch]);
 
   return (
     <Box className={[styles.root]}>

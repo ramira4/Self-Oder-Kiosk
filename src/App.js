@@ -1,26 +1,25 @@
 import {
   Container,
+  createTheme,
   CssBaseline,
   Paper,
   ThemeProvider,
 } from '@material-ui/core';
-import React, { useContext } from 'react';
-import { Store } from './store';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { useContext } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import AdminScreen from './screens/AdminScreen';
 import ChooseScreen from './screens/ChooseScreen';
+import CompleteOrderScreen from './screens/CompleteOrderScreen';
 import HomeScreen from './screens/HomeScreen';
 import OrderScreen from './screens/OrderScreen';
-import QueueScreen from './screens/QueueScreen';
-import { createTheme } from '@material-ui/core';
-import ReviewScreen from './screens/ReviewScreen';
 import PaymentScreen from './screens/PaymentScreen';
-import AdminScreen from './screens/AdminScreen';
+import QueueScreen from './screens/QueueScreen';
+import ReviewScreen from './screens/ReviewScreen';
 import SelectPaymentScreen from './screens/SelectPaymentScreen';
-import CompleteOrderScreen from './screens/CompleteOrderScreen';
-import { Helmet } from 'react-helmet';
+import { Store } from './store';
 
 const theme = createTheme({
-  typography:{
+  typography: {
     h1: { fontWeight: 'bold' },
     h2: {
       fontSize: '2rem',
@@ -39,38 +38,36 @@ const theme = createTheme({
       contrastText: '#ffffff',
     },
   },
-})
+});
 
 function App() {
   const { state } = useContext(Store);
+
   return (
     <BrowserRouter>
-    <Helmet>
-    <title>Self-Order Kiosk</title>
-    </Helmet>
       <ThemeProvider theme={theme}>
-      <CssBaseline/>
-      <Container maxWidth ={state.widthScreen ? 'lg' : 'sm'}>
-        <Paper>
-        <Route path="/" component={HomeScreen} exact></Route>
-        <Route path="/admin" component={AdminScreen} exact></Route>
-        <Route path="/queue" component={QueueScreen} exact></Route>
-        <Route path="/choose" component={ChooseScreen} exact></Route>
-        <Route path="/order" component={OrderScreen} exact></Route>
-        <Route path="/review" component={ReviewScreen} exact></Route>
-        <Route
-          path="/select-payment"
-          component={SelectPaymentScreen}
-          exact
-        ></Route>
-        <Route path="/payment" component={PaymentScreen} exact></Route>
-        <Route
-          path="/complete"
-          component={CompleteOrderScreen}
-          exact
-        ></Route>
-        </Paper>
-      </Container>
+        <CssBaseline />
+        <Container maxWidth={state.widthScreen ? 'lg' : 'sm'}>
+          <Paper>
+            <Route path="/" component={HomeScreen} exact={true}></Route>
+            <Route path="/choose" component={ChooseScreen} exact={true}></Route>
+            <Route path="/order" component={OrderScreen} exact={true}></Route>
+            <Route path="/review" component={ReviewScreen} exact></Route>
+            <Route
+              path="/select-payment"
+              component={SelectPaymentScreen}
+              exact
+            ></Route>
+            <Route path="/payment" component={PaymentScreen} exact></Route>
+            <Route
+              path="/complete"
+              component={CompleteOrderScreen}
+              exact
+            ></Route>
+            <Route path="/admin" component={AdminScreen} exact></Route>
+            <Route path="/queue" component={QueueScreen} exact></Route>
+          </Paper>
+        </Container>
       </ThemeProvider>
     </BrowserRouter>
   );

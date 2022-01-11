@@ -20,7 +20,7 @@ export default function QueueScreen(props) {
 
   useEffect(() => {
     listQueue(dispatch);
-  }, []);
+  }, [dispatch]);
 
   return (
     <Box className={[styles.root]}>

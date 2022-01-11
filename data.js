@@ -1,33 +1,33 @@
 const data = {
     categories:[
         {
-            name: 'Bevarages', image: '/images/beverages.jpeg'
+            name: 'Drinks', image: '/images/beverages.jpg'
         },
         {
             name: 'Breakfast', image: '/images/breakfast.jpg'
         },
         {
-            name: 'Burgers', image: '/images/burger.jpg'
+            name: 'Burgers', image: '/images/burgers.jpg'
         }
 
     ],
     products: [
         {
-          category: 'Beverages',
+          category: 'Drinks',
           name: 'Coca-Cola',
           calorie: 120,
           price: 1,
           image: '/images/t-mcdonalds-Coca-Cola-Classic-Small.jpg',
         },
         {
-          category: 'Beverages',
-          name: 'Vanill Shake',
+          category: 'Drinks',
+          name: 'Vanilla Shake',
           price: 1.5,
           calorie: 360,
           image: '/images/t-mcdonalds-Vanilla-McCafe-Shake-Medium.jpg',
         },
         {
-          category: 'Beverages',
+          category: 'Drinks',
           name: 'Hot Chocolate',
           price: 2,
           calorie: 170,

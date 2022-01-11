@@ -76,7 +76,7 @@ export default function OrderScreen(props) {
     } else {
       listProducts(dispatch, categoryName);
     }
-  }, [categories, categoryName]);
+  }, [categories, categoryName, dispatch]);
 
   const categoryClickHandler = (name) => {
     setCategoryName(name);

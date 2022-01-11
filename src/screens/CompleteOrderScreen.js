@@ -15,7 +15,7 @@ export default function CompleteOrderScreen(props) {
     if (order.orderItems.length > 0) {
       createOrder(dispatch, order);
     }
-  }, [order]);
+  }, [dispatch, order]);
 
   return (
     <Box className={[styles.root, styles.navy]}>

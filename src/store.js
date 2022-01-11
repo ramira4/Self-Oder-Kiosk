@@ -1,5 +1,4 @@
 import React, { createContext, useReducer } from 'react';
-import useReducerWithThunk from 'use-reducer-thunk';
 import {
   ORDER_ADD_ITEM,
   ORDER_REMOVE_ITEM,
@@ -189,7 +188,7 @@ function reducer(state, action) {
 
 export function StoreProvider(props) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  //const [state, dispatch] = useReducerWithThunk(reducer, initialState, 'example');
+ 
 
   const value = { state, dispatch };
   return <Store.Provider value={value}>{props.children}</Store.Provider>;

@@ -14,7 +14,11 @@ dotenv.config();
 const connectionString = 'mongodb+srv://ana:ana@cluster0.qk4ak.mongodb.net/sokiosk?retryWrites=true&w=majority';
 
 mongoose
-  .connect(connectionString)
+  .connect(connectionString, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
   console.log("database connected");
   })
